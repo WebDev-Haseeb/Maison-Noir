@@ -1,0 +1,147 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * MAISON NOIR — Grooming Atelier design tokens.
+ * Warm noir palette. All colors in oklch. Token-only theming —
+ * future salon clients rebrand by swapping this block.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Brand-specific aliases */
+  --color-noir: var(--noir);
+  --color-noir-deep: var(--noir-deep);
+  --color-creme: var(--creme);
+  --color-creme-soft: var(--creme-soft);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.25rem;
+
+  /* Warm noir core */
+  --noir: oklch(0.18 0.008 60);          /* #14110F charcoal espresso */
+  --noir-deep: oklch(0.13 0.006 60);     /* deeper for sections */
+  --creme: oklch(0.93 0.025 80);         /* #EDE6D6 warm cream */
+  --creme-soft: oklch(0.93 0.025 80 / 0.6);
+  --brass: oklch(0.68 0.09 70);          /* #B5935B muted brass */
+  --brass-soft: oklch(0.68 0.09 70 / 0.4);
+
+  /* Semantic mapping → dark UI */
+  --background: var(--noir);
+  --foreground: var(--creme);
+  --card: var(--noir-deep);
+  --card-foreground: var(--creme);
+  --popover: var(--noir-deep);
+  --popover-foreground: var(--creme);
+  --primary: var(--brass);
+  --primary-foreground: var(--noir);
+  --secondary: oklch(0.25 0.01 60);
+  --secondary-foreground: var(--creme);
+  --muted: oklch(0.22 0.008 60);
+  --muted-foreground: oklch(0.65 0.02 70);
+  --accent: var(--brass);
+  --accent-foreground: var(--noir);
+  --destructive: oklch(0.55 0.2 25);
+  --destructive-foreground: var(--creme);
+  --border: oklch(0.93 0.025 80 / 0.08);
+  --input: oklch(0.93 0.025 80 / 0.12);
+  --ring: var(--brass);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-brass);
+    color: var(--color-noir);
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .font-sans  { font-family: var(--font-sans); }
+  .font-mono  { font-family: var(--font-mono); }
+
+  .tracking-eyebrow { letter-spacing: 0.24em; }
+  .text-eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Subtle film grain overlay */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes slow-zoom {
+    from { transform: scale(1.04); }
+    to   { transform: scale(1.12); }
+  }
+  .animate-slow-zoom {
+    animation: slow-zoom 18s ease-out both;
+  }
+}
