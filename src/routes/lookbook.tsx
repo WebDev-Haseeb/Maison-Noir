@@ -45,7 +45,7 @@ function LookbookPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex items-end justify-between gap-8 flex-wrap">
           <Reveal>
             <div className="text-eyebrow text-brass mb-6">Lookbook</div>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95]">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
               Edition <em className="italic text-brass">24/01</em>
             </h1>
           </Reveal>

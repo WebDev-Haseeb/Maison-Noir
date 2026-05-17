@@ -22,7 +22,7 @@ function ContactPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <Reveal>
             <div className="text-eyebrow text-brass mb-6">Contact</div>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] max-w-4xl">
               Two ateliers. <em className="italic text-brass">One standard.</em>
             </h1>
           </Reveal>

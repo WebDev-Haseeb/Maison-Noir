@@ -34,7 +34,7 @@ function ExperiencePage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-12 gap-8 items-end">
           <Reveal className="col-span-12 lg:col-span-7">
             <div className="text-eyebrow text-brass mb-6">The Experience</div>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95]">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95]">
               A quieter kind <em className="italic text-brass">of luxury.</em>
             </h1>
           </Reveal>

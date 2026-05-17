@@ -97,11 +97,6 @@ function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-6 right-6 lg:right-10 z-10 flex items-center gap-3 text-eyebrow text-creme/40">
-        <span>Scroll</span>
-        <span className="h-px w-10 bg-creme/30" />
-      </div>
     </section>
   );
 }
@@ -132,7 +127,7 @@ function ServicesPreview() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-16 lg:mb-24">
           <div>
             <div className="text-eyebrow text-brass mb-4">(01) Signature Services</div>
-            <h2 className="font-serif text-5xl md:text-6xl leading-tight max-w-2xl">
+            <h2 className="font-serif text-5xl lemax-w-2xl">
               An edited menu, executed with care.
             </h2>
           </div>
@@ -148,7 +143,7 @@ function ServicesPreview() {
                 <div className="flex gap-6 items-baseline min-w-0">
                   <span className="font-mono text-eyebrow text-brass/70 shrink-0">{s.no}</span>
                   <div className="min-w-0">
-                    <h3 className="font-serif text-2xl text-creme group-hover:text-brass transition-colors">
+                    <h3 className="font-serif text-xl sm:text-2xl text-creme group-hover:text-brass transition-colors">
                       {s.name}
                     </h3>
                     <p className="text-sm text-creme/50 mt-1.5 text-pretty">{s.blurb}</p>
@@ -172,7 +167,7 @@ function ArtisansPreview() {
         <div className="flex items-end justify-between mb-16 lg:mb-24 gap-8">
           <div>
             <div className="text-eyebrow text-brass mb-4">(02) The Artisans</div>
-            <h2 className="font-serif text-5xl md:text-6xl leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
               Hands behind <em className="italic">the chair</em>.
             </h2>
           </div>
@@ -262,7 +257,7 @@ function Lookbook() {
         <div className="flex items-end justify-between mb-16 gap-8">
           <div>
             <div className="text-eyebrow text-brass mb-4">(03) Lookbook</div>
-            <h2 className="font-serif text-5xl md:text-6xl">Recent work.</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Recent work.</h2>
           </div>
           <Link to="/lookbook" className="text-eyebrow text-brass border-b border-brass/40 pb-1 hover:text-creme hover:border-creme transition-colors">
             View Lookbook →
@@ -337,7 +332,7 @@ function BookingCta() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 text-center">
         <Reveal>
           <div className="text-eyebrow text-brass mb-8">(05) Reserve</div>
-          <h2 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-balance max-w-4xl mx-auto">
+          <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] text-balance max-w-4xl mx-auto">
             Secure your chair, <em className="italic text-brass">or the room.</em>
           </h2>
           <p className="text-creme/60 max-w-xl mx-auto mt-8 text-pretty leading-relaxed">

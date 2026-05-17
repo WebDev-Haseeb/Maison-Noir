@@ -24,7 +24,7 @@ function ServicesPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <Reveal>
             <div className="text-eyebrow text-brass mb-6">Menu d'Atelier</div>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] max-w-4xl">
               Six services. <em className="italic text-brass">No fillers.</em>
             </h1>
             <p className="font-serif italic text-xl md:text-2xl text-creme/60 max-w-xl mt-10 leading-snug">

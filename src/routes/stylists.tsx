@@ -23,7 +23,7 @@ function StylistsPage() {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <Reveal>
             <div className="text-eyebrow text-brass mb-6">The Artisans</div>
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] max-w-4xl">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] max-w-4xl">
               You don't go to a salon. <em className="italic text-brass">You go to a barber.</em>
             </h1>
           </Reveal>
@@ -49,7 +49,7 @@ function StylistsPage() {
                 </div>
                 <div className="col-span-12 md:col-span-5 [direction:ltr] space-y-6">
                   <div className="font-mono text-eyebrow text-brass">0{i + 1} / {STYLISTS.length.toString().padStart(2, "0")}</div>
-                  <h2 className="font-serif text-5xl md:text-6xl leading-tight">{s.name}</h2>
+                  <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight">{s.name}</h2>
                   <div className="text-eyebrow text-creme/50">{s.role} — {s.city}</div>
                   <p className="text-creme/70 leading-relaxed text-pretty max-w-md">{s.bio}</p>
                   <div className="pt-4 border-t border-creme/10 flex items-baseline justify-between max-w-sm">
