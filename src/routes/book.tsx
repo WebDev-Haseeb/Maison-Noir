@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
+import { AppleSelect } from "@/components/ui/apple-select";
 import { BRAND, LOCATIONS, SERVICES, STYLISTS } from "@/lib/site-data";
 
 export const Route = createFileRoute("/book")({
@@ -96,32 +97,21 @@ function BookPage() {
               </Field>
 
               <Field label="03 — Atelier">
-                <div className="flex gap-3 flex-wrap">
-                  {LOCATIONS.map((l) => (
-                    <Chip
-                      key={l.city}
-                      active={form.city === l.city}
-                      onClick={() => update("city", l.city as "Lahore" | "Karachi")}
-                    >
-                      {l.city}
-                    </Chip>
-                  ))}
-                </div>
+                <AppleSelect
+                  value={form.city}
+                  onChange={(value) => update("city", value as "Lahore" | "Karachi")}
+                  options={LOCATIONS.map((l) => ({ value: l.city, label: l.city }))}
+                  placeholder="Select your atelier"
+                />
               </Field>
 
               <Field label="04 — Service">
-                <select
+                <AppleSelect
                   value={form.service}
-                  onChange={(e) => update("service", e.target.value)}
-                  className="w-full bg-transparent border-b border-creme/15 focus:border-brass outline-none py-3 text-xl font-serif text-creme transition-colors appearance-none"
-                  style={{ backgroundImage: "none" }}
-                >
-                  {SERVICES.map((s) => (
-                    <option key={s.no} value={s.name} className="bg-noir text-creme">
-                      {s.name} — {s.price}
-                    </option>
-                  ))}
-                </select>
+                  onChange={(value) => update("service", value)}
+                  options={SERVICES.map((s) => ({ value: s.name, label: `${s.name} — ${s.price}` }))}
+                  placeholder="Select a service"
+                />
               </Field>
 
               <Field label="05 — Preferred barber">
